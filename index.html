@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixverse - A tiny pixel universe made just for you</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="pixverse-container">
+        <!-- Loading Screen -->
+        <div id="loading-screen" class="screen active">
+            <div class="pixverse-logo">
+                <div class="logo-icon">★</div>
+                <div class="logo-text">PIXVERSE</div>
+                <div class="logo-tagline">A tiny pixel universe made just for you</div>
+            </div>
+            <div class="loading-animation">
+                <div class="pixel-loader"></div>
+                <div class="loading-progress-container">
+                    <div class="loading-progress-bar">
+                        <div class="loading-progress-fill" id="loading-progress"></div>
+                    </div>
+                    <div class="loading-text">INITIALIZING PIXEL UNIVERSE... <span id="loading-percentage">0%</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Landing / Countdown Screen -->
+        <div id="countdown-screen" class="screen">
+            <div class="crt-screen">
+                <div class="screen-content">
+                    <div class="pixverse-title">
+                        <div class="title-icon">★</div>
+                        <h1>PIXVERSE</h1>
+                        <p class="tagline">A tiny pixel universe made just for you</p>
+                    </div>
+                    <div class="countdown-display">
+                        <div class="countdown-text">COUNTDOWN TO YOUR SPECIAL DAY</div>
+                        <div class="countdown-timer">
+                            <div class="timer-unit">
+                                <span class="timer-digit" id="days">00</span>
+                                <span class="timer-label">DAYS</span>
+                            </div>
+                            <div class="timer-separator">:</div>
+                            <div class="timer-unit">
+                                <span class="timer-digit" id="hours">00</span>
+                                <span class="timer-label">HOURS</span>
+                            </div>
+                            <div class="timer-separator">:</div>
+                            <div class="timer-unit">
+                                <span class="timer-digit" id="minutes">00</span>
+                                <span class="timer-label">MINUTES</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="start-prompt">
+                        <div class="blink-text">PRESS START</div>
+                        <button class="pixel-btn start-btn" id = "start-journey-btn" data-action="start">START</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wrapped Intro Screen -->
+        <div id="wrapped-screen" class="screen">
+            <div class="crt-screen">
+                <div class="screen-header">
+                    <h2>PIXSTATS</h2>
+                    <div class="subtitle">Your Year in Pixels</div>
+                </div>
+                
+                <!-- HUD Bar -->
+                <div class="hud-bar">
+                    <div class="hud-item">
+                        <span class="hud-label">TOKENS:</span>
+                        <span class="token-count">0</span>
+                    </div>
+                </div>
+                
+                <div class="carousel-container">
+                    <div class="carousel-track">
+                        <!-- Card 1: Top Moments -->
+                        <div class="pixel-card active" data-card="1">
+                            <div class="card-header">
+                                <span class="card-badge">1UP</span>
+                                <h3>Top Moments</h3>
+                            </div>
+                            <div class="card-content">
+                                <div class="top-moments">
+                                    <div class="moment-item">
+                                        <div class="moment-image">
+                                            <img src="images/sushi.jpg" alt="Special Moment 1" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                                            <div class="image-fallback">📸</div>
+                                        </div>
+                                        <div class="moment-caption">Sushi Time</div>
+                                    </div>
+                                    <div class="moment-item">
+                                        <div class="moment-image">
+                                            <img src="images/kece.jpg" alt="Special Moment 2" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                                            <div class="image-fallback">🎉</div>
+                                        </div>
+                                        <div class="moment-caption">Photostudio Time</div>
+                                    </div>
+                                    <div class="moment-item">
+                                        <div class="moment-image">
+                                            <img src="images/tp.jpg" alt="Special Moment 3" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                                            <div class="image-fallback">☕</div>
+                                        </div>
+                                        <div class="moment-caption">Malmingan in Jl. Tunjungan</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Card 2: Top Songs -->
+                        <div class="pixel-card" data-card="2">
+                            <div class="card-header">
+                                <span class="card-badge">LVL.2</span>
+                                <h3>♪ Spotify Playlist</h3>
+                            </div>
+                            <div class="card-content scrollable-content">
+                                <div class="music-content">
+                                    <!-- Spotify Player will be loaded here -->
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Card 3: Photobox -->
+                        <div class="pixel-card" data-card="3">
+                            <div class="card-header">
+                                <span class="card-badge">LVL.3</span>
+                                <h3>Photobox</h3>
+                            </div>
+                            <div class="card-content scrollable-content">
+                                <div class="photobox-content">
+                                    <!-- Photobox content akan di-load oleh JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Card 4: Awards -->
+                        <div class="pixel-card" data-card="4">
+                            <div class="card-header">
+                                <span class="card-badge">🏆</span>
+                                <h3>Awards</h3>
+                            </div>
+                            <div class="card-content scrollable-content">
+                                <div class="awards-content">
+                                    <!-- Awards content akan diisi oleh JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-controls">
+                    <button class="pixel-btn prev-btn" data-action="prev-card">◀</button>
+                    <div class="carousel-indicators">
+                        <span class="indicator active" data-index="0"></span>
+                        <span class="indicator" data-index="1"></span>
+                        <span class="indicator" data-index="2"></span>
+                        <span class="indicator" data-index="3"></span>
+                    </div>
+                    <button class="pixel-btn next-btn" data-action="next-card">▶</button>
+                </div>
+                
+                <div class="screen-footer">
+                    <button class="pixel-btn continue-btn" id="continue-to-jigsaw" data-action="continue" data-target="jigsaw">CONTINUE TO JIGSAW</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Jigsaw Puzzle Screen -->
+        <div id="jigsaw-screen" class="screen puzzle-screen">
+            <div class="crt-screen">
+                <div class="screen-header">
+                    <h2>JIGSAW BAY</h2>
+                    <div class="subtitle">Reconstruct the Memory</div>
+                </div>
+                
+                <div class="puzzle-container">
+                    <div class="puzzle-status" id="puzzle-status">SOLVE THE PUZZLE!</div>
+                    <div class="puzzle-board" id="puzzle-board">
+                        <!-- Puzzle pieces will be generated by JavaScript -->
+                    </div>
+                    <div class="puzzle-controls">
+                        <button class="pixel-btn back-btn" data-action="back" data-target="wrapped">BACK</button>
+                        <button class="pixel-btn hint-btn" data-action="hint">HINT</button>
+                        <button class="pixel-btn reset-btn" data-action="reset">RESET</button>
+                        <button class="pixel-btn continue-btn" data-action="continue" data-target="reveal">CONTINUE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Final Reveal Screen -->
+        <div id="reveal-screen" class="screen">
+            <div class="crt-screen">
+                <div class="screen-header">
+                    <h2>CONGRATULATIONS!</h2>
+                    <div class="subtitle">You've Unlocked the Treasure</div>
+                </div>
+                <div class="reveal-container scrollable-content">
+                    <div class="split-screen">
+                        <div class="left-panel">
+                            <div class="gift-display">
+                                <div class="gift-title">Your Special Gift</div>
+                                <div class="video-player" id="video-container">
+                                    <div class="video-placeholder">
+                                        <div class="play-icon">▶</div>
+                                        <div class="video-label">Birthday Video Message</div>
+                                    </div>
+                                </div>
+                                <div class="gift-controls">
+                                    <button class="pixel-btn play-video-btn" data-action="play-video">PLAY VIDEO</button>
+                                    <button class="pixel-btn download-video-btn" data-action="download-video" style="display: none;">DOWNLOAD VIDEO</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right-panel">
+                            <div class="personal-letter">
+                                <div class="letter-title">A Message Just For You</div>
+                                <div class="letter-content">
+                                    <!-- Content will be filled by typewriter effect -->
+                                </div>
+                                <button class="pixel-btn download-btn" data-action="download">DOWNLOAD YOUR YEARBOOK</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="screen-controls">
+                    <button class="pixel-btn share-btn" data-action="share">SHARE YOUR PIXVERSE MOMENT</button>
+                    <button class="pixel-btn continue-btn" data-action="continue" data-target="post-reveal">CONTINUE</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Post-Reveal Screen -->
+        <div id="post-reveal-screen" class="screen">
+            <div class="crt-screen">
+                <div class="screen-header">
+                    <h2>STAR GALLERY</h2>
+                    <div class="subtitle">Messages from Your Universe</div>
+                </div>
+                <div class="post-reveal-content scrollable-content">
+                    <div class="star-gallery">
+                        <h3>Friend Messages</h3>
+                        <div class="messages-container">
+                            <!-- Messages will be populated by JavaScript -->
+                        </div>
+                
+                        <div class="message-form">
+                            <h3>Leave a Message in the Pixverse</h3>
+                            <textarea placeholder="Write your message here..."></textarea>
+                            <button class="pixel-btn submit-btn" data-action="submit-message">ADD TO STAR GALLERY</button>
+                        </div>
+                
+                        <div class="gallery-controls">
+                            <button class="pixel-btn back-btn" data-action="back" data-target="reveal">BACK</button>
+                            <button class="pixel-btn restart-btn" data-action="restart">RESTART JOURNEY</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast hidden">
+        <div class="toast-content"></div>
+    </div>
+
+    <!-- Audio Elements -->
+    <audio id="click-sound" preload="auto">
+        <source src="sounds/click.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="win-sound" preload="auto">
+        <source src="sounds/win.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="hint-sound" preload="auto">
+        <source src="sounds/hint.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="reset-sound" preload="auto">
+        <source src="sounds/reset.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="video-sound" preload="auto">
+        <source src="sounds/video.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="message-sound" preload="auto">
+        <source src="sounds/message.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="poster-sound" preload="auto">
+        <source src="sounds/poster.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="download-sound" preload="auto">
+        <source src="sounds/download.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="share-sound" preload="auto">
+        <source src="sounds/share.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="pin-sound" preload="auto">
+        <source src="sounds/pin.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="restart-sound" preload="auto">
+        <source src="sounds/restart.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="level-up-sound" preload="auto">
+        <source src="sounds/level-up.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="start-sound" preload="auto">
+        <source src="sounds/start.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
