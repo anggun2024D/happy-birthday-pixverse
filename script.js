@@ -1406,10 +1406,6 @@ function updateAchievementStats() {
                         </div>
                     </div>
                 </div>
-                
-                <div class="fallback-footer">
-                    <small>If videos don't work, make sure your Google Drive file is set to "Anyone with the link can view"</small>
-                </div>
             </div>
         `;
         
@@ -1876,4 +1872,5 @@ style.textContent = `
         transition: all 5s ease;
     }
 `;
+
 document.head.appendChild(style);
